@@ -34,7 +34,10 @@ class _SeekBarState extends State<SeekBar> {
       return '--:--';
     } else {
       String minutes = duration.inMinutes.toString().padLeft(2, '0');
-      String seconds = duration.inSeconds.toString().padLeft(2, '0');
+      double seconds0 =
+          double.parse('0.${duration.inSeconds.toString().padLeft(2, '0')}');
+      String seconds = seconds0.toStringAsFixed(2).replaceAll('0.', '');
+      // String seconds = duration.inSeconds.toString().padLeft(2, '0');
       return '$minutes:$seconds';
     }
   }

@@ -23,7 +23,7 @@ class SongCard extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: [
             Container(
-              width: MediaQuery.of(context).size.width * 0.45,
+              width: MediaQuery.of(context).size.width * 0.50,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
@@ -35,7 +35,7 @@ class SongCard extends StatelessWidget {
             ),
             Container(
               height: 50,
-              width: MediaQuery.of(context).size.width * 0.40,
+              width: MediaQuery.of(context).size.width * 0.45,
               margin: const EdgeInsets.only(bottom: 10.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),

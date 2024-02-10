@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:get/get.dart';
 
 import '../models/models.dart';
@@ -35,6 +36,15 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
             'Playlist',
             style: TextStyle(color: Colors.white),
           ),
+          leading: IconButton(
+            onPressed: () {
+              Get.toNamed('/');
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+          ),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -46,6 +56,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                   height: 30,
                 ),
                 const _PlayOrShuffleSwitch(),
+                const SizedBox(
+                  height: 10,
+                ),
                 _PlaylistSongs(playlist: playlist)
               ],
             ),
@@ -126,6 +139,14 @@ class _PlayOrShuffleSwitchState extends State<_PlayOrShuffleSwitch> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20.0),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black54,
+              blurRadius: 3,
+              offset: Offset(3, 3),
+              inset: true,
+            ),
+          ],
         ),
         child: Stack(
           children: [
@@ -138,6 +159,14 @@ class _PlayOrShuffleSwitchState extends State<_PlayOrShuffleSwitch> {
                 decoration: BoxDecoration(
                   color: Colors.deepPurple.shade800,
                   borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black54,
+                      blurRadius: isPlay ? 3 : 0,
+                      offset: isPlay ? const Offset(3, 0) : const Offset(0, 0),
+                      inset: false,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -216,13 +245,24 @@ class _PlaylistInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(10.0),
-          child: Image.network(
-            playlist.imageUrl,
-            height: MediaQuery.of(context).size.height * 0.3,
-            width: MediaQuery.of(context).size.height * 0.3,
-            fit: BoxFit.cover,
+        Container(
+          decoration: BoxDecoration(
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black38,
+                blurRadius: 10,
+                // offset: Offset(0, -3),
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            child: Image.asset(
+              playlist.imageUrl,
+              height: MediaQuery.of(context).size.height * 0.35,
+              width: MediaQuery.of(context).size.height * 0.35,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         const SizedBox(

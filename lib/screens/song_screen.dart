@@ -56,6 +56,15 @@ class _SongScreenState extends State<SongScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: InkWell(
+          onTap: () {
+            Get.toNamed('/');
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+        ),
       ),
       extendBodyBehindAppBar: true,
       body: Stack(
@@ -125,7 +134,7 @@ class _MusicPlayer extends StatelessWidget {
             builder: (context, snapshot) {
               final positionData = snapshot.data;
               return SeekBar(
-                position: positionData?.duration ?? Duration.zero,
+                position: positionData?.position ?? Duration.zero,
                 duration: positionData?.duration ?? Duration.zero,
                 onChangeEnd: audioPlayer.seek,
               );
@@ -139,7 +148,7 @@ class _MusicPlayer extends StatelessWidget {
               IconButton(
                 onPressed: () {},
                 iconSize: 35,
-                icon: Icon(
+                icon: const Icon(
                   Icons.settings,
                   color: Colors.white,
                 ),
@@ -147,7 +156,7 @@ class _MusicPlayer extends StatelessWidget {
               IconButton(
                 onPressed: () {},
                 iconSize: 35,
-                icon: Icon(
+                icon: const Icon(
                   Icons.cloud_download,
                   color: Colors.white,
                 ),

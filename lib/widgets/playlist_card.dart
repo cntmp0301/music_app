@@ -30,7 +30,7 @@ class PlaylistCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
-              child: Image.network(
+              child: Image.asset(
                 playlist.imageUrl,
                 height: 55,
                 width: 55,

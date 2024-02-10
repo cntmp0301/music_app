@@ -9,22 +9,19 @@ class Playlist {
 
   static List<Playlist> playlists = [
     Playlist(
-      title: 'Hip-hop R&B Mix',
-      songs: Song.songs,
-      imageUrl:
-          'https://assets.podomatic.net/ts/ce/a4/e3/remixcast-com/600x600_9947386.jpg',
+      title: 'Indie Mix',
+      songs: Song.indieSongs,
+      imageUrl: 'assets/images/gondry.png',
     ),
     Playlist(
-      title: 'Rock & Roll',
-      songs: Song.songs,
-      imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZuIgg6x7J9fDvg7otZDApBQP336wFB8W6Mw&s',
+      title: 'R&B Mix',
+      songs: Song.rbSongs,
+      imageUrl: 'assets/images/juice.png',
     ),
     Playlist(
-      title: 'Techno',
-      songs: Song.songs,
-      imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-EGEM2g-cgAyyZLSD-7okVleEYRWvpySTA&s',
+      title: 'Moody Mix',
+      songs: Song.moodySongs,
+      imageUrl: 'assets/images/likeineedu.png',
     ),
   ];
 }

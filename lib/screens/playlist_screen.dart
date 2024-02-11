@@ -85,6 +85,12 @@ class _PlaylistSongs extends StatelessWidget {
         itemCount: playlist.songs.length,
         itemBuilder: (context, index) {
           return ListTile(
+            onTap: () {
+              Get.toNamed('/song', arguments: playlist.songs[index]);
+            },
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
             leading: Text(
               '${index + 1}',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -246,8 +252,8 @@ class _PlaylistInformation extends StatelessWidget {
     return Column(
       children: [
         Container(
-          decoration: BoxDecoration(
-            boxShadow: const [
+          decoration: const BoxDecoration(
+            boxShadow: [
               BoxShadow(
                 color: Colors.black38,
                 blurRadius: 10,

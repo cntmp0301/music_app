@@ -63,13 +63,13 @@ class Song {
       title: 'Die For You',
       description: 'Joji',
       url: 'assets/music/3.mp3',
-      coverUrl: 'assets/images/3.png',
+      coverUrl: 'assets/images/3.PNG',
     ),
     Song(
       title: 'Bad',
       description: 'Wave To Earth',
       url: 'assets/music/2.mp3',
-      coverUrl: 'assets/images/2.png',
+      coverUrl: 'assets/images/2.PNG',
     ),
     Song(
       title: 'beside you',

@@ -142,24 +142,35 @@ class _DiscoverMusic extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                contentPadding: const EdgeInsets.all(5),
-                filled: true,
-                fillColor: Colors.white,
-                hintText: 'Search',
-                hintStyle: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(color: Colors.grey.shade400),
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: Colors.grey.shade400,
+          Container(
+            decoration: const BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black38,
+                  blurRadius: 10,
+                  offset: Offset(0, -3),
                 ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide.none,
-                )),
+              ],
+            ),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.all(5),
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Search',
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(color: Colors.grey.shade400),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.grey.shade400,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide.none,
+                  )),
+            ),
           )
         ],
       ),

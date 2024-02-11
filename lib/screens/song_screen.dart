@@ -147,17 +147,17 @@ class _MusicPlayer extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {},
-                iconSize: 35,
+                iconSize: 30,
                 icon: const Icon(
-                  Icons.settings,
+                  Icons.settings_rounded,
                   color: Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                iconSize: 35,
+                iconSize: 30,
                 icon: const Icon(
-                  Icons.cloud_download,
+                  Icons.download_rounded,
                   color: Colors.white,
                 ),
               ),

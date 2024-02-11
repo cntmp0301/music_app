@@ -62,7 +62,9 @@ class PlaylistCard extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/playlist', arguments: playlist);
+              },
               icon: const Icon(
                 Icons.play_circle,
                 color: Colors.white,
